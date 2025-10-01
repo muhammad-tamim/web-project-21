@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "title": "Login button not working",
+        "description": "Customer reports that clicking the login button does not redirect to the dashboard.",
+        "customer": "John Doe",
+        "priority": "High",
+        "status": "Open",
+        "createdAt": "2025-10-01"
+    },
+    {
+        "id": 2,
+        "title": "Page not loading on Safari",
+        "description": "User reports that the homepage remains blank when opened in Safari browser.",
+        "customer": "Alice Smith",
+        "priority": "Medium",
+        "status": "Open",
+        "createdAt": "2025-09-28"
+    },
+    {
+        "id": 3,
+        "title": "Password reset email not received",
+        "description": "Customer requested a password reset but never got the email link.",
+        "customer": "Michael Lee",
+        "priority": "High",
+        "status": "Open",
+        "createdAt": "2025-09-25"
+    },
+    {
+        "id": 4,
+        "title": "Broken image on product page",
+        "description": "The product thumbnail image is not displaying correctly for product ID #4502.",
+        "customer": "Sarah Wilson",
+        "priority": "Low",
+        "status": "Open",
+        "createdAt": "2025-09-22"
+    },
+    {
+        "id": 5,
+        "title": "Error 500 on checkout",
+        "description": "Customer reports receiving a server error while trying to complete a purchase.",
+        "customer": "David Chen",
+        "priority": "Critical",
+        "status": "Open",
+        "createdAt": "2025-09-20"
+    },
+    {
+        "id": 6,
+        "title": "Profile picture upload fails",
+        "description": "Upload button does not respond when attempting to change profile picture.",
+        "customer": "Emily Johnson",
+        "priority": "Medium",
+        "status": "Open",
+        "createdAt": "2025-09-18"
+    },
+    {
+        "id": 7,
+        "title": "Notifications not updating",
+        "description": "Bell icon shows no updates even though new messages are received.",
+        "customer": "Chris Brown",
+        "priority": "Low",
+        "status": "Open",
+        "createdAt": "2025-09-15"
+    },
+    {
+        "id": 8,
+        "title": "Search function returns no results",
+        "description": "Customer tried searching for 'laptop' but no products are returned.",
+        "customer": "Sophia Martinez",
+        "priority": "High",
+        "status": "Open",
+        "createdAt": "2025-09-12"
+    },
+    {
+        "id": 9,
+        "title": "Slow page loading",
+        "description": "Pages take more than 12 seconds to load on a stable WiFi connection.",
+        "customer": "James Anderson",
+        "priority": "Medium",
+        "status": "Open",
+        "createdAt": "2025-09-10"
+    },
+    {
+        "id": 10,
+        "title": "Duplicate order placed",
+        "description": "Customer reports that clicking 'Place Order' twice created two orders.",
+        "customer": "Laura Green",
+        "priority": "High",
+        "status": "Open",
+        "createdAt": "2025-09-08"
+    },
+    {
+        "id": 11,
+        "title": "Live chat not connecting",
+        "description": "User is unable to connect to the support agent via live chat.",
+        "customer": "Daniel Kim",
+        "priority": "Critical",
+        "status": "Open",
+        "createdAt": "2025-09-05"
+    },
+    {
+        "id": 12,
+        "title": "App crashes on login",
+        "description": "Mobile app closes immediately after entering login credentials.",
+        "customer": "Olivia White",
+        "priority": "High",
+        "status": "Open",
+        "createdAt": "2025-09-02"
+    },
+    {
+        "id": 13,
+        "title": "Invoice PDF not generating",
+        "description": "Customer cannot download their purchase invoice as PDF.",
+        "customer": "Ethan Miller",
+        "priority": "Medium",
+        "status": "Open",
+        "createdAt": "2025-08-30"
+    },
+    {
+        "id": 14,
+        "title": "Wishlist not saving items",
+        "description": "Customer adds items to wishlist but they disappear after refresh.",
+        "customer": "Grace Taylor",
+        "priority": "Low",
+        "status": "Open",
+        "createdAt": "2025-08-28"
+    }
+]
