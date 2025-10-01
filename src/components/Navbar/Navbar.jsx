@@ -13,7 +13,7 @@ const Navbar = () => {
     ]
 
     return (
-        <div className='py-[26px] px-5 md:px-10  xl:px-20 flex justify-between items-center'>
+        <div className='py-[26px] flex justify-between items-center'>
             <div>
                 <h1 className='text-[#130B2D] font-bold md:text-2xl'>CS - Ticket System</h1>
             </div>
