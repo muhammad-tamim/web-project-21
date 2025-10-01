@@ -7,6 +7,53 @@
 ## Project Video:
 
 ## What I Learned New while Building This Project:
+1. Different way to rendered list using map: 
+
+way 1: using parenthesis :
+
+```jsx
+        {singleData.map(data => (
+                    <div className='mb-10'>
+                        <div className='mt-4 rounded-sm bg-white shadow p-4'>
+                            <p className='font-medium pb-4'>Payment Failed - Card Declined</p>
+                            <div>
+                                <button className='btn bg-[#02A53B] text-white w-full'>Complete</button>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+```
+
+way 2: using `<div>`;
+
+```jsx
+
+                {singleData.map(data => <div className='mb-10'>
+                        <div className='mt-4 rounded-sm bg-white shadow p-4'>
+                            <p className='font-medium pb-4'>Payment Failed - Card Declined</p>
+                            <div>
+                                <button className='btn bg-[#02A53B] text-white w-full'>Complete</button>
+                            </div>
+                        </div>
+                    </div>
+                )}
+```
+
+way 3: using fragment: 
+
+```jsx
+        {singleData.map(data => <>
+                    <div className='mb-10'>
+                        <div className='mt-4 rounded-sm bg-white shadow p-4'>
+                            <p className='font-medium pb-4'>Payment Failed - Card Declined</p>
+                            <div>
+                                <button className='btn bg-[#02A53B] text-white w-full'>Complete</button>
+                            </div>
+                        </div>
+                    </div>
+                </>)}
+```
+
 
 ## Challenges I faced while Building This Project:
 1. I faced a lot of trouble designing two status bar cards, because they have a linear gradient with two vectors (one on the left and one on the right). I kept thinking about how to do that and tried different ways. After spending lots of time, I finally found the way:
