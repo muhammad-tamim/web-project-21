@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './components/Navbar/Navbar';
 import TicketSection from './components/TicketSection/TicketSection';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   return (
@@ -9,6 +10,7 @@ const App = () => {
       <div className='py-[80px] bg-[#F5F5F5]'>
         <TicketSection></TicketSection>
       </div>
+      <Footer></Footer>
     </div>
   );
 };
