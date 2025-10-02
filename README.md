@@ -101,7 +101,7 @@ import calendar from '../../assets/images/calendar.png'
 import { useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
-const Ticket = ({ data, error, loading, inProgress, setInProgress }) => {
+const Ticket = ({ data, error, loading, inProgress, setInProgress, resolvedCount, setResolvedCount }) => {
 
     const [singleData, setSingleData] = useState([])
     const [tickets, setTickets] = useState([])
@@ -124,11 +124,18 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress }) => {
     const handleCompleteClick = (id) => {
         const filteredSingleData = singleData.filter((filterSingle) => filterSingle.id !== id)
         setSingleData(filteredSingleData)
-
         const findResolvedData = singleData.find(findResolved => findResolved.id === id)
-
         setResolvedData([...resolvedData, findResolvedData])
-         
+
+
+        // remove the resolved data form the all ticket card list
+        const remainingData = tickets.filter(remaining => remaining.id !== id)
+        setTickets(remainingData)
+
+        // increase the resolved count and decreased the resolved count
+        setResolvedCount(resolvedCount + 1)
+        setInProgress(inProgress - 1)
+
         toast.success("Your ticket is resolved successfully");
     }
 
@@ -183,8 +190,8 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress }) => {
                     <h2 className='text-2xl font-semibold text-[#34485A]'>Task Status</h2>
 
                     {singleData.length === 0 && <p className='my-4 text-[#627382]'>Select a ticket to add to Task Status</p>}
-                    {singleData.map(data => <div key={data.id} className='mb-10'>
-                        <div className='mt-4 rounded-sm bg-white shadow p-4'>
+                    {singleData.map(data => <div key={data.id} className=''>
+                        <div className='my-4 rounded-sm bg-white shadow p-4'>
                             <p className='font-medium pb-4'>{data.title}</p>
                             <div>
                                 <button onClick={() => handleCompleteClick(data.id)} className='btn bg-[#02A53B] text-white w-full'>Complete</button>
