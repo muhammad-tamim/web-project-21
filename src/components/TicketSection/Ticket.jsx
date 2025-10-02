@@ -3,10 +3,11 @@ import calendar from '../../assets/images/calendar.png'
 import { useEffect, useState } from 'react';
 import { toast, ToastContainer } from 'react-toastify';
 
-const Ticket = ({ data, error, loading, inProgress, setInProgress }) => {
+const Ticket = ({ data, error, loading, inProgress, setInProgress, resolvedCount, setResolvedCount }) => {
 
     const [singleData, setSingleData] = useState([])
     const [tickets, setTickets] = useState([])
+    const [resolvedData, setResolvedData] = useState([])
 
     useEffect(() => {
         setTickets(data)
@@ -19,7 +20,25 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress }) => {
         const updatedTicketStatus = tickets.map(ticket => ticket.id === clickedData.id ? { ...ticket, status: "in-Progress" } : ticket)
         setTickets(updatedTicketStatus)
 
-        toast.success("Your Ticket is in Progress");
+        toast.success("Your ticket is in-Progress");
+    }
+
+    const handleCompleteClick = (id) => {
+        const filteredSingleData = singleData.filter((filterSingle) => filterSingle.id !== id)
+        setSingleData(filteredSingleData)
+        const findResolvedData = singleData.find(findResolved => findResolved.id === id)
+        setResolvedData([...resolvedData, findResolvedData])
+
+
+        // remove the resolved data form the all ticket card list
+        const remainingData = tickets.filter(remaining => remaining.id !== id)
+        setTickets(remainingData)
+
+        // increase the resolved count and decreased the resolved count
+        setResolvedCount(resolvedCount + 1)
+        setInProgress(inProgress - 1)
+
+        toast.success("Your ticket is resolved successfully");
     }
 
     return (
@@ -73,21 +92,21 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress }) => {
                     <h2 className='text-2xl font-semibold text-[#34485A]'>Task Status</h2>
 
                     {singleData.length === 0 && <p className='my-4 text-[#627382]'>Select a ticket to add to Task Status</p>}
-                    {singleData.map(data => <div key={data.id} className='mb-10'>
-                        <div className='mt-4 rounded-sm bg-white shadow p-4'>
+                    {singleData.map(data => <div key={data.id} className=''>
+                        <div className='my-4 rounded-sm bg-white shadow p-4'>
                             <p className='font-medium pb-4'>{data.title}</p>
                             <div>
-                                <button className='btn bg-[#02A53B] text-white w-full'>Complete</button>
+                                <button onClick={() => handleCompleteClick(data.id)} className='btn bg-[#02A53B] text-white w-full'>Complete</button>
                             </div>
                         </div>
                     </div>
                     )}
 
                     <h2 className='text-2xl font-semibold text-[#34485A]'>Resolved Task</h2>
-                    <p className='my-4 text-[#627382]'>No resolved tasks yet.</p>
-                    <div>
-                        <p className='mt-4 px-4 py-5 bg-[#E0E7FF] rounded-sm font-medium shadow'>Incorrect Billing Address</p>
-                    </div>
+                    {resolvedData.length === 0 && <p className='my-4 text-[#627382]'>No resolved tasks yet.</p>}
+
+                    {resolvedData.map((resolved) => <p key={resolved.id} className='mt-4 px-4 py-5 bg-[#E0E7FF] rounded-sm font-medium shadow'>{resolved.title}</p>)}
+
                 </div>
             </div>
         </>
