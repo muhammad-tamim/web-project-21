@@ -45,12 +45,12 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress, resolvedCount
         <>
             <ToastContainer autoClose={1000} />
 
-            <div className='grid grid-cols-12 gap-8'>
+            <div className='lg:grid lg:grid-cols-12 lg:gap-8 space-y-10 lg:space-y-0'>
 
-                <div className='col-span-9'>
+                <div className='lg:col-span-9'>
                     <h2 className='text-2xl font-semibold text-[#34485A] pb-4'>Customer Tickets</h2>
 
-                    <div className='grid grid-cols-2 gap-6'>
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
                         {/* cards */}
                         {loading && <div className='text-center col-span-2'>
                             <span className="loading size-16 loading-spinner"></span>
@@ -61,22 +61,22 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress, resolvedCount
                         {tickets.map(card => (
                             <div key={card.id} className='shadow rounded-sm bg-white p-4'>
                                 <div className='flex justify-between items-center pb-2'>
-                                    <p className='font-medium'>{card.title}</p>
+                                    <p className='font-medium text-xs md:text-base'>{card.title}</p>
                                     <div onClick={() => handleClick(card)} className={`flex items-center justify-center text-center px-3 py-1 rounded-[400px] ${card.status === "Open" ? "bg-[#B9F8CF]" : "bg-[#F8F3B9]"} cursor-pointer`}>
-                                        <GoDotFill className={`text-4xl ${card.status === "Open" ? "text-[#02A53B]" : "text-[#FEBB0C]"}  text-center`} />
-                                        <p className={`${card.status === "Open" ? "text-[#0B5E06]" : "text-[#FEBB0C]"} font-medium text-center`}>{card.status}</p>
+                                        <GoDotFill className={`lg:text-4xl ${card.status === "Open" ? "text-[#02A53B]" : "text-[#FEBB0C]"}  text-center`} />
+                                        <p className={`text-sm ${card.status === "Open" ? "text-[#0B5E06]" : "text-[#FEBB0C]"} font-medium text-center`}>{card.status}</p>
                                     </div>
                                 </div>
-                                <p className='pb-4  text-[#627382]'>{card.description}</p>
-                                <div className='font-medium text-sm flex justify-between'>
-                                    <div className='flex gap-4'>
+                                <p className='pb-4  text-[#627382] text-sm'>{card.description}</p>
+                                <div className='font-medium text-xs flex justify-between '>
+                                    <div className='flex lg:gap-4 gap-1'>
                                         <p className='text-[#627382]'>#100{card.id}</p>
                                         <p className={`${card.priority === "High" && "text-[#F83044]" || card.priority === "Low" && "text-[#02A53B]" || card.priority === "Medium" && "text-[#FEBB0C]"} `}>{card.priority}</p>
                                     </div>
-                                    <div className='flex gap-4'>
+                                    <div className='flex lg:gap-4 gap-1'>
                                         <p className='text-[#627382]'>{card.customer}</p>
-                                        <div className='flex gap-2'>
-                                            <img src={calendar} alt="" />
+                                        <div className='flex items-center lg:gap-2 gap-0.5'>
+                                            <img src={calendar} className='size-5' alt="" />
                                             <p className='text-[#627382]'>{card.createdAt}</p>
                                         </div>
                                     </div>
@@ -87,7 +87,7 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress, resolvedCount
 
                 </div>
 
-                <div className='col-span-3 '>
+                <div className='lg:col-span-3 '>
 
                     <h2 className='text-2xl font-semibold text-[#34485A]'>Task Status</h2>
 
