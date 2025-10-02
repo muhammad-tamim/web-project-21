@@ -40,7 +40,7 @@
         "title": "Error 500 on checkout",
         "description": "Customer reports receiving a server error while trying to complete a purchase.",
         "customer": "David Chen",
-        "priority": "Critical",
+        "priority": "Medium",
         "status": "Open",
         "createdAt": "2025-09-20"
     },
@@ -94,7 +94,7 @@
         "title": "Live chat not connecting",
         "description": "User is unable to connect to the support agent via live chat.",
         "customer": "Daniel Kim",
-        "priority": "Critical",
+        "priority": "Low",
         "status": "Open",
         "createdAt": "2025-09-05"
     },

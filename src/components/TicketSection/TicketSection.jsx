@@ -7,6 +7,7 @@ const TicketSection = () => {
     const [data, setData] = useState([])
     const [error, setError] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [inProgress, setInProgress] = useState(0)
 
     useEffect(() => {
         fetch("data.json")
@@ -17,8 +18,8 @@ const TicketSection = () => {
     }, [])
     return (
         <div className='mx-5 md:mx-10 xl:mx-20 bg-white'>
-            <StatusBar></StatusBar>
-            <Ticket data={data} error={error} loading={loading}></Ticket>
+            <StatusBar inProgress={inProgress}></StatusBar>
+            <Ticket data={data} error={error} loading={loading} inProgress={inProgress} setInProgress={setInProgress}></Ticket>
         </div>
     );
 };
