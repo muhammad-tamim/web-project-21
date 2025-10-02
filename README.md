@@ -1,8 +1,11 @@
-# Project Name: 
+# Project Name: CS-Ticket System
 
 ## Project Description:  
+CS-Ticket System is a React-based Customer Support web application designed to help customer service teams efficiently manage support tickets. It provides an intuitive interface to display tickets, track their progress, and update their status (In Progress or Resolved). With real-time statistics, interactive ticket management, and a clean dashboard layout, the system ensures smooth and organized customer support operations.
 
 ## Live Site Link:
+
+https://web-project-21.netlify.app/
 
 ## Project Video:
 
