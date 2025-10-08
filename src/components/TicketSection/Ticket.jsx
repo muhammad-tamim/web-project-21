@@ -91,16 +91,18 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress, resolvedCount
 
                     <h2 className='text-2xl font-semibold text-[#34485A]'>Task Status</h2>
 
-                    {singleData.length === 0 && <p className='my-4 text-[#627382]'>Select a ticket to add to Task Status</p>}
-                    {singleData.map(data => <div key={data.id} className=''>
-                        <div className='my-4 rounded-sm bg-white shadow p-4'>
-                            <p className='font-medium pb-4'>{data.title}</p>
-                            <div>
-                                <button onClick={() => handleCompleteClick(data.id)} className='btn bg-[#02A53B] text-white w-full'>Complete</button>
+                    <div className='max-h-96 border border-[#e0eeff] overflow-auto my-2 space-y-4 py-2 px-2 rounded-lg'>
+                        {singleData.length === 0 && <p className='my-4 text-[#627382] text-center'>Select a ticket to add to Task Status</p>}
+                        {singleData.map(data => <div key={data.id} className=''>
+                            <div className='rounded-sm bg-white shadow p-4'>
+                                <p className='font-medium pb-4'>{data.title}</p>
+                                <div>
+                                    <button onClick={() => handleCompleteClick(data.id)} className='btn bg-[#02A53B] text-white w-full'>Complete</button>
+                                </div>
                             </div>
                         </div>
+                        )}
                     </div>
-                    )}
 
                     <h2 className='text-2xl font-semibold text-[#34485A]'>Resolved Task</h2>
 
