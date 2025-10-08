@@ -103,9 +103,12 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress, resolvedCount
                     )}
 
                     <h2 className='text-2xl font-semibold text-[#34485A]'>Resolved Task</h2>
-                    {resolvedData.length === 0 && <p className='my-4 text-[#627382]'>No resolved tasks yet.</p>}
 
-                    {resolvedData.map((resolved) => <p key={resolved.id} className='mt-4 px-4 py-5 bg-[#E0E7FF] rounded-sm font-medium shadow'>{resolved.title}</p>)}
+                    <div className='max-h-80 border border-[#e0eeff] overflow-auto my-2 space-y-4 py-2 px-2 rounded-lg'>
+                        {resolvedData.length === 0 && <p className='my-4 text-[#627382] text-center'>No resolved tasks yet.</p>}
+
+                        {resolvedData.map((resolved) => <p key={resolved.id} className=' px-4 py-5 bg-[#E0E7FF] rounded-sm font-medium shadow'>{resolved.title}</p>)}
+                    </div>
 
                 </div>
             </div>
