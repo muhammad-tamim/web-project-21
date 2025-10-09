@@ -13,6 +13,7 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress, resolvedCount
         setTickets(data)
     }, [data])
 
+
     const handleClick = (clickedData) => {
         setSingleData([...singleData, clickedData])
         setInProgress(inProgress + 1)
@@ -62,7 +63,7 @@ const Ticket = ({ data, error, loading, inProgress, setInProgress, resolvedCount
                             <div key={card.id} className='shadow rounded-sm bg-white p-4'>
                                 <div className='flex justify-between items-center pb-2'>
                                     <p className='font-medium text-xs md:text-base'>{card.title}</p>
-                                    <div onClick={() => handleClick(card)} className={`flex items-center justify-center text-center px-3 py-1 rounded-[400px] ${card.status === "Open" ? "bg-[#B9F8CF]" : "bg-[#F8F3B9]"} cursor-pointer`}>
+                                    <div onClick={() => card.status === "Open" && handleClick(card)} className={`flex items-center justify-center text-center px-3 py-1 rounded-[400px] ${card.status === "Open" ? 'cursor-pointer' : 'cursor-not-allowed'} ${card.status === "Open" ? "bg-[#B9F8CF]" : "bg-[#F8F3B9]"} `}>
                                         <GoDotFill className={`lg:text-4xl ${card.status === "Open" ? "text-[#02A53B]" : "text-[#FEBB0C]"}  text-center`} />
                                         <p className={`text-sm ${card.status === "Open" ? "text-[#0B5E06]" : "text-[#FEBB0C]"} font-medium text-center`}>{card.status}</p>
                                     </div>
