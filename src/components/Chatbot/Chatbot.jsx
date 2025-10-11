@@ -35,7 +35,7 @@ const Chatbot = () => {
             {!isOpen && (
                 <button
                     onClick={toggleChat}
-                    className="bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
+                    className="cursor-pointer bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition"
                 >
                     <FaRobot size={22} />
                 </button>
@@ -43,10 +43,14 @@ const Chatbot = () => {
 
             {/* Chat Window */}
             {isOpen && (
-                <div className=" w-76 md:w-80 h-96 bg-white shadow-2xl rounded-2xl flex flex-col border border-gray-200">
+                <div
+                    className={`w-76 md:w-80 h-96 bg-white shadow-2xl rounded-2xl flex flex-col border border-gray-200
+    transform transition-all duration-300 ease-out
+    ${isOpen ? 'opacity-100 scale-100 translate-y-0' : 'opacity-0 scale-90 translate-y-5'}`}
+                >
                     <div className="bg-linear-to-br from-[#54CF68] to-[#00827A] text-white px-4 py-3 rounded-t-2xl flex justify-between items-center">
                         <h3 className="font-semibold text-sm">CS-Ticket Assistant</h3>
-                        <button onClick={toggleChat} className="text-white hover:text-gray-200">✖</button>
+                        <button onClick={toggleChat} className="cursor-pointer text-white hover:text-gray-200">✖</button>
                     </div>
 
                     <div className="flex-1 p-3 overflow-y-auto space-y-2">
@@ -78,13 +82,14 @@ const Chatbot = () => {
                         />
                         <button
                             onClick={handleSend}
-                            className=" bg-linear-to-br from-[#54CF68] to-[#00827A] text-white p-2 rounded-lg  transition"
+                            className="cursor-pointer bg-linear-to-br from-[#54CF68] to-[#00827A] text-white p-2 rounded-lg transition hover:opacity-90"
                         >
                             <IoSend size={16} />
                         </button>
                     </div>
                 </div>
             )}
+
         </div>
     );
 };
